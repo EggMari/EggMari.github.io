@@ -146,6 +146,8 @@
         }
 
         let make = (isRandom = true) => {
+            
+            $('#inputha').val($('#inputha').val().replace(/[^a-z|A-Z|0-9|ㄱ-ㅎ|가-힣]/g, ""));
             let aaa = junghahaha($('#inputha').val())
         
             if(aaa == 'ᄇ' || aaa == 'ᄊ' || aaa == 'ᄉ'){
