@@ -146,7 +146,7 @@
         }
 
         let make = (isRandom = true) => {
-            if($('#inputha').val() == '빈' || $('#inputha').val().indexOf('b') != -1 || $('#inputha').val().indexOf('B') != -1 || $('#inputha').val().indexOf('v') != -1 || $('#inputha').val().indexOf('V') != -1){
+            if(junghahaha($('#inputha').val()) == 'ㅂ' || $('#inputha').val().indexOf('b') != -1 || $('#inputha').val().indexOf('B') != -1 || $('#inputha').val().indexOf('v') != -1 || $('#inputha').val().indexOf('V') != -1){
                 alert('정하하하하');
                 return;
             }
@@ -175,6 +175,17 @@
             $("#output").select()
             $("#output").select()
         })
+        
+      function junghahaha(src) {
+         src = src.substring(0, 1);
+          var b = '';
+          var index = ((src.charCodeAt() - 44032) /28) / 21;
+            if(index >= 0) {
+              b += String.fromCharCode(index + 4352);
+            } 
+          return b;
+        }
+        
     </script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
    
