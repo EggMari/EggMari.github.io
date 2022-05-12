@@ -146,7 +146,8 @@
         }
 
         let make = (isRandom = true) => {
-            if(junghahaha($('#inputha').val()) == 'ㅂ' || $('#inputha').val().indexOf('b') != -1 || $('#inputha').val().indexOf('B') != -1 || $('#inputha').val().indexOf('v') != -1 || $('#inputha').val().indexOf('V') != -1){
+            let aaa = junghahaha($('#inputha').val())
+            if(aaa == 'ᄇ' || $('#inputha').val() == '빈' || $('#inputha').val().indexOf('b') != -1 || $('#inputha').val().indexOf('B') != -1 || $('#inputha').val().indexOf('v') != -1 || $('#inputha').val().indexOf('V') != -1){
                 alert('정하하하하');
                 return;
             }
