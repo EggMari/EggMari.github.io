@@ -153,11 +153,12 @@
                  return;
             }
             //for문으로 바꿔야야함
-            let junghahahaha = ['빈', 'b', 'B', 'V', 'v', 's', 'S'];
+            var junghahahaha = ['빈', 'b', 'B', 'V', 'v', 's', 'S'];
             for(var hahahahaha in junghahahaha ){
-                    if(hahahahaha == $('#inputha').val()){
-                        alert('정하하하하');
-                        return;}
+                var substr = $('#inputha').val().substring(0,1);
+                if(junghahahaha[hahahahaha] == substr){
+                    alert('정하하하하');
+                    return;}
             }
            
             let junghaha = ""
