@@ -147,10 +147,19 @@
 
         let make = (isRandom = true) => {
             let aaa = junghahaha($('#inputha').val())
-            if(aaa == 'ᄇ' || $('#inputha').val() == '빈' || $('#inputha').val().indexOf('b') != -1 || $('#inputha').val().indexOf('B') != -1 || $('#inputha').val().indexOf('v') != -1 || $('#inputha').val().indexOf('V') != -1){
-                alert('정하하하하');
-                return;
+        
+            if(aaa == 'ᄇ'){
+                 alert('정하하하하');
+                 return;
             }
+            //for문으로 바꿔야야함
+            let junghahahaha = ['빈', 'b', 'B', 'V', 'v', 's', 'S'];
+            for(var hahahahaha in junghahahaha ){
+                    if(hahahahaha == $('#inputha').val()){
+                        alert('정하하하하');
+                        return;}
+            }
+           
             let junghaha = ""
             let targetha = isRandom ? ha.random({exe:false}) : ha[ha.length - 1]
             while (junghaha.length < 150 && !junghaha.match(/iframe/)) junghaha += targetha(jung.random({ exe: true }), accent)
