@@ -159,11 +159,11 @@
         let make = (isRandom = true) => {
             
             $('#inputha').val($('#inputha').val().replace(/[^a-z|A-Z|0-9|ㄱ-ㅎ|가-힣]/g, ""));
-            let aaa = junghahaha($('#inputha').val())
-        
+            let aaa = junghahaha($('#inputha').val());
+
+
             if(aaa == 'ᄇ' || aaa == 'ᄊ' || aaa == 'ᄉ'|| aaa == 'ᄄ'|| aaa == 'ᄈ'){
                 isjunghaha = true;
-
             }
             //for문으로 바꿔야야함
             var junghahahaha = ['빈', 'b', 'B', 'V', 'v', 's', 'S', '넨'];
@@ -180,6 +180,7 @@
             while (junghaha.length < 150 && !junghaha.match(/iframe/)) junghaha += targetha(jung.random({ exe: true }), accent)
             if(isjunghaha){
                 alert($('#inputha').val() + '는 금지어입니다 \n정하하하하');
+                isjunghaha = false;
                 return;
             }else{
                 return junghaha;
