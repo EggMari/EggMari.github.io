@@ -102,7 +102,8 @@
             () => $('#inputha').val() == '' ? '정' : $('#inputha').val() + `${"우".random(0, 4)}웅`]
         let ha = [
             (st) => st + "훠".random(20, 30),
-            (st) => "中" + "下".random(20, 30),
+            (st) => st + "下".random(20, 30),
+            (st, accent) => st + `키킼${accent('long')} 킼${accent('bold')} ㅋ${"킼".random(10, 15)}${accent('long')}`,
             (st, accent) => st + `기덕${accent('long')} 끈${accent('bold')} 더${"러".random(10, 15)}${accent('long')}`,
             (st, accent) => st + `${"하".random(20, 30)}${accent()}`,
             (st, accent) => st + [`끼${"이".random(5, 10)}익`, `꾸익`.random(3, 5)].random() + accent(),
