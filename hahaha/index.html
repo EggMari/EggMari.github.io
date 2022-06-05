@@ -68,6 +68,7 @@
                 <div class="card-action">
                     <a class="waves-effect waves-light btn" id="make">생성</a>
                     <a class="waves-effect waves-light btn" id="copy" disabled>복사</a>
+                    <a class="waves-effect waves-light btn" id="kakao" disabled>공유</a>
                 </div>
 
             </div>
@@ -75,7 +76,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <script>        
+        <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+
+
+        $(document).ready(function(){
+            Kakao.init('2c906d130960b06a141ab18917da39b6');
+        });
+
+
+        let isjunghaha = false;
         Math.randomInt = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a
         Array.prototype.random = function ({ exe = false, st = 1, en = 1, param } = {}) {
             let rslt = ""
@@ -151,25 +161,31 @@
             let aaa = junghahaha($('#inputha').val())
         
             if(aaa == 'ᄇ' || aaa == 'ᄊ' || aaa == 'ᄉ'|| aaa == 'ᄄ'|| aaa == 'ᄈ'){
-                 alert('정하하하하');
-                 return;
+                isjunghaha = true;
+
             }
             //for문으로 바꿔야야함
-            var junghahahaha = ['빈', 'b', 'B', 'V', 'v', 's', 'S'];
+            var junghahahaha = ['빈', 'b', 'B', 'V', 'v', 's', 'S', '넨'];
             for(var hahahahaha in junghahahaha ){
                 var substr = $('#inputha').val().substring(0,1);
                 if(junghahahaha[hahahahaha] == substr){
-                    alert('정하하하하');
-                    return;}
+                    isjunghaha = true;
+
+                }
             }
            
             let junghaha = ""
             let targetha = isRandom ? ha.random({exe:false}) : ha[ha.length - 1]
             while (junghaha.length < 150 && !junghaha.match(/iframe/)) junghaha += targetha(jung.random({ exe: true }), accent)
-            return junghaha
+            if(isjunghaha){
+                alert($('#inputha').val() + '는 금지어입니다 \n정하하하하');
+                return;
+            }else{
+                return junghaha;
+            }
         }
 
-        make(false)
+        make(false);
         $("#make").on("click", function () {
             $(".output-wrap").removeClass("hide");
             let txt = make(true);
@@ -188,6 +204,32 @@
             $("#output").select()
             $("#output").select()
         })
+        $("#kakao").on("click", function () {
+            Kakao.Link.sendDefault({
+                objectType:"feed",
+                content : {
+                    title: 'Eggmari',
+                    description: '당신만의 하하하를 만들어보세요',
+                    imageUrl: 'kuromi.gif',
+                    link: {
+                        mobileWebUrl: 'https://github.com/EggMari/EggMari.github.io',
+                        webUrl: 'https://github.com/EggMari/EggMari.github.io',
+                    },
+                },
+                installTalk : true,
+                buttons : [
+                    {
+                        title: '웹으로 보기',
+                        link: {
+                            mobileWebUrl: 'https://github.com/EggMari/EggMari.github.io',
+                            webUrl: 'https://github.com/EggMari/EggMari.github.io',
+                        }
+                    }
+                ]
+
+            });
+
+        });
         
       function junghahaha(src) {
          src = src.substring(0, 1);
