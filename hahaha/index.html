@@ -236,6 +236,13 @@
           return b;
         }
         
+        
+        window.addEventListener("copy", (e) => {
+             if(isjunghaha){
+                e.preventDefault();
+                e.clipboardData.setData("Text", "정하하하하하");
+              }
+         });
     </script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
    
