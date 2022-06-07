@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>하하하 생성기</title>
     <meta name="title" content="하하하 생성기" />
-    <meta name="description" content="하끼얏호우~!" />
+    <meta name="description" content="끼얏호우~!" />
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -157,7 +157,7 @@
         }
 
         let make = (isRandom = true) => {
-            
+             isjunghaha = false;
             $('#inputha').val($('#inputha').val().replace(/[^a-z|A-Z|0-9|ㄱ-ㅎ|가-힣]/g, ""));
             let aaa = junghahaha($('#inputha').val());
 
@@ -178,13 +178,8 @@
             let junghaha = ""
             let targetha = isRandom ? ha.random({exe:false}) : ha[ha.length - 1]
             while (junghaha.length < 150 && !junghaha.match(/iframe/)) junghaha += targetha(jung.random({ exe: true }), accent)
-            if(isjunghaha){
-                alert($('#inputha').val() + '는 금지어입니다 \n정하하하하');
-                isjunghaha = false;
-                return;
-            }else{
-                return junghaha;
-            }
+            
+            return junghaha;
         }
 
         make(false);
@@ -198,6 +193,11 @@
             $("#kakao").removeAttr("disabled");
         })
         $("#copy").on("click", function () {
+            if(isjunghaha){
+                alert($('#inputha').val() + '는 금지어입니다 \n정하하하하');
+                isjunghaha = false;
+                return;
+            }
             $("#output").select()
             document.execCommand("copy");
             $("#output").prop('selectionStart', 0).prop('selectionEnd',0).blur();
@@ -208,6 +208,12 @@
             $("#output").select()
         })
         $("#kakao").on("click", function () {
+            if(isjunghaha){
+                alert($('#inputha').val() + '는 금지어입니다 \n정하하하하');
+                isjunghaha = false;
+                return;
+            }
+            
             Kakao.Link.sendDefault({
                 objectType: 'text',
                 text:
