@@ -194,22 +194,24 @@
         })
         $("#copy").on("click", function () {
             if(isjunghaha){
-                alert($('#inputha').val() + '는 금지어입니다 \n정하하하하');
-                return;
+               /* alert($('#inputha').val() + '는 금지어입니다 \n정하하하하');
+                return;*/
+               $('#output').val('정하하하');
             }
-            $("#output").select()
+            $("#output").select();
             document.execCommand("copy");
             $("#output").prop('selectionStart', 0).prop('selectionEnd',0).blur();
-            M.toast({ html: "복사 완료" })
+            M.toast({ html: "복사 완료" });
         })
         $("#output").on("focus", function () {
             $("#output").select()
             $("#output").select()
         })
         $("#kakao").on("click", function () {
-            if(isjunghaha){
-                alert($('#inputha').val() + '는 금지어입니다 \n정하하하하');
-                return;
+           if(isjunghaha){
+               /* alert($('#inputha').val() + '는 금지어입니다 \n정하하하하');
+                return;*/
+               $('#output').val('정하하하');
             }
             
             Kakao.Link.sendDefault({
